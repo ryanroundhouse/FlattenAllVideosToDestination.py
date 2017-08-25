@@ -2,3 +2,19 @@
 Flatten all videos from a folder structure to a specific folder
 
 Created by Ryan Graham
+
+## Instructions:
+1. Open FlattenAllVideosToDestination.py in notepad
+2. Change the value of 'source' to the folder from which you want to pull the files.
+3. Change the value of 'destination' to the folder to which you want the files to arrive.
+4. Execute script by running '> python FlattenAllVideosToDestination.py'
+
+## Output
+All files are moved from the source folder structure into the destination folder.
+
+2 csv files are created in the execution directory during execution.
+1. notMigrated.csv - this file contains a listing of all files that were skipped.
+2. migrated.csv - this file contains a listing of all files that were migrated.
+
+## Known issues
+1. I never tested overwritting files.
