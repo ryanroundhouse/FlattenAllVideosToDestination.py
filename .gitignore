@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# output that's not required
+migrated.csv
+notMigrated.csv
