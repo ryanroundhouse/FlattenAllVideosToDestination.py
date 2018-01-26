@@ -1,12 +1,19 @@
 #FlattenAllVideosToDestination.py by Ryan Graham
 import os
 import shutil
+import sys
 
 class FlattenHelper:
 	#source = '//cerberus/download/'
 	#destination = '//cerberus/download/'
-	source = "./test/"
-	destination = "./test/"
+	print (len(sys.argv))
+	if len(sys.argv) < 3 or len(sys.argv) > 3:
+		print("You must provide source and destination paths.")
+		print("example: py flattenhelper.py \"/test/\" \"./test/\"")
+		sys.exit()
+
+	source = sys.argv[1]
+	destination = sys.argv[2]
 
 	extensions = set(["mp4","avi","mkv","mov","mpg","wmv"])
 	notMigratedList = "notMigrated.csv"
@@ -17,6 +24,7 @@ class FlattenHelper:
 	def flattenTheVideos(self):
 		with open(FlattenHelper.notMigratedList, 'w') as notMigratedFileList:	
 			with open(FlattenHelper.migratedList, 'w') as migratedFileList:	
+				print(FlattenHelper.source)
 				# traverse root directory, and list directories as dirs and files as files
 				for root, dirs, files in os.walk(FlattenHelper.source):
 					path = root.split(os.sep)
