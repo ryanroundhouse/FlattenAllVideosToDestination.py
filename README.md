@@ -4,7 +4,7 @@ Flatten all videos from a folder structure to a specific folder
 Created by Ryan Graham
 
 ## Instructions:
-1. Execute script by running '> py FlattenAllVideosToDestination.py <source folder> <destination folder>'
+1. Execute script by running '> py FlattenAllVideosToDestination.py \<source folder> \<destination folder>'
 
 ## Output
 All files are moved from the <source folder> structure into the <destination folder>.
