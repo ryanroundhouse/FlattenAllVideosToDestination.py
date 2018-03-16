@@ -37,7 +37,7 @@ class FlattenHelper:
 							if (fileExtension in FlattenHelper.extensions):
 								print("moving " + moveFrom + " to " + moveTo)
 								migratedFileList.write(moveFrom + "," + str(moveFrom).rsplit('.',1)[1]+"\n")
-								#shutil.move(moveFrom, moveTo)
+								shutil.move(moveFrom, moveTo)
 								FlattenHelper.numberOfMoviesMigrated += 1
 							else:
 								notMigratedFileList.write(moveFrom + "," + str(moveFrom).rsplit('.',1)[1]+"\n")
