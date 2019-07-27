@@ -6,11 +6,10 @@ import sys
 class FlattenHelper:
 	#source = '//cerberus/download/'
 	#destination = '//cerberus/download/'
-	print (len(sys.argv))
 	if len(sys.argv) < 3 or len(sys.argv) > 3:
 		print("You must provide source and destination paths.")
 		print("example: py flattenhelper.py \"/test/\" \"./test/\"")
-		sys.exit()
+		sys.exit(0)
 
 	source = sys.argv[1]
 	destination = sys.argv[2]
