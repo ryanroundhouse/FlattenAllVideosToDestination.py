@@ -26,7 +26,6 @@ class FlattenHelper:
 				print(FlattenHelper.source)
 				# traverse root directory, and list directories as dirs and files as files
 				for root, dirs, files in os.walk(FlattenHelper.source):
-					path = root.split(os.sep)
 					for file in files:
 						FlattenHelper.numberOfFilesFound += 1
 						moveFrom = os.path.join(root,file)
