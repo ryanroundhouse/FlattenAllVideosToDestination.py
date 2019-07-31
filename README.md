@@ -1,13 +1,14 @@
 # FlattenAllVideosToDestination.py
-Flatten all videos from a folder structure to a specific folder
+Flatten all videos from a folder structure to a specific folder.
+I created this script to collapse all the subfolders each with a single video file into a single folder so that I can easily apply an action to all videos in a series (delete, archive, etc...)
 
-Created by Ryan Graham
+Created by Ryan Graham 2018
 
 ## Instructions:
-1. Execute script by running '> py FlattenAllVideosToDestination.py <source folder> <destination folder>'
+1. Execute script by running '> python FlattenAllVideosToDestination.py _source folder_ _destination folder_'
 
 ## Output
-All files are moved from the <source folder> structure into the <destination folder>.
+All files are moved from the _source folder_ structure into the _destination folder_.
 
 2 csv files are created in the execution directory during execution.
 1. notMigrated.csv - this file contains a listing of all files that were skipped.
