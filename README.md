@@ -10,6 +10,7 @@ Execute script by running
 
 ## Output
 All video files are moved from the _source folder_ structure into the _destination folder_.
+The script will migrate the following video files by extension (".mp4", ".avi", ".mkv", ".mov", ".mpg", ".wmv")
 
 ## Known issues
 I never tested overwritting files.
