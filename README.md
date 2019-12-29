@@ -5,14 +5,15 @@ I created this script to collapse all the subfolders each with a single video fi
 Created by Ryan Graham 2018
 
 ## Instructions:
-1. Execute script by running '> python FlattenAllVideosToDestination.py _source folder_ _destination folder_'
+Execute script by running 
+``` python FlattenAllVideosToDestination.py _source folder_ _destination folder_```
 
 ## Output
-All files are moved from the _source folder_ structure into the _destination folder_.
-
-2 csv files are created in the execution directory during execution.
-1. notMigrated.csv - this file contains a listing of all files that were skipped.
-2. migrated.csv - this file contains a listing of all files that were migrated.
+All video files are moved from the _source folder_ structure into the _destination folder_.
 
 ## Known issues
-1. I never tested overwritting files.
+I never tested overwritting files.
+
+## Unit tests
+Execute unit tests by running
+``` py -m unittest FlattenUtils_test ```
