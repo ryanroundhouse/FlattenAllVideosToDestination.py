@@ -16,4 +16,4 @@ def getFilesToMigrate(folder, fileTypes):
 
     return fileList
 
-getFilesToMigrate("./test/", [".mkv"])
+# getFilesToMigrate("./test/", [".mkv"])
