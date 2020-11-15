@@ -23,6 +23,16 @@ Files sent to Series:
 {1}
 """.format('\n'.join(bigFiles), '\n'.join(smallFiles))
 
+    movieFileSection = "<ul>"
+    for bigFile in bigFiles:
+        movieFileSection += "<li>{0}</li>".format(bigFile)
+    movieFileSection += "</ul>"
+
+    seriesFileSection = "<ul>"
+    for smallFile in smallFiles:
+        seriesFileSection += "<li>{0}</li>".format(smallFile)
+    seriesFileSection += "</ul>"
+
     htmlMessage = """ \
 <html>
     <head></head>
@@ -34,7 +44,7 @@ Files sent to Series:
         {1}
     </body>
 </html>
-""".format('\n'.join(bigFiles), '\n'.join(smallFiles))
+""".format(movieFileSection, seriesFileSection)
 
     part1 = MIMEText(textMessage, 'plain')
     part2 = MIMEText(htmlMessage, 'html')

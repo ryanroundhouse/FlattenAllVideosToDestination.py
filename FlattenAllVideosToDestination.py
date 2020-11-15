@@ -25,10 +25,10 @@ movieDirectory = sys.argv[3]
 extensions = [".mp4",".avi",".mkv",".mov",".mpg",".wmv"]
 
 # Big Summary
-movieList = [""]
+movieList = []
 
 # Small Summary
-seriesList = [""]
+seriesList = []
 
 print("started run on " + str(datetime.datetime.now()))
 numberOfVideosMigrated = 0
