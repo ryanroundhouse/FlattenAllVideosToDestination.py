@@ -10,22 +10,22 @@ class TestFlattenUtils(unittest.TestCase):
 
     def test_getFilesToMigrateThrowsExceptionIfInvalidFolderProvided(self):
         with self.assertRaises(Exception):
-            FlattenUtils.getFilesToMigrate("c:/lkihaghdklhdghklagdklhadgklhakjlgjkladg", [])
+            FlattenUtils.getFilesToMigrate("c:\\lkihaghdklhdghklagdklhadgklhakjlgjkladg", [])
 
     def test_getFilesToMigrateThrowsExceptionIfFileNotFolderIsProvided(self):
         with self.assertRaises(Exception):
-            FlattenUtils.getFilesToMigrate("./test/1/herewego.mp4", [])
+            FlattenUtils.getFilesToMigrate(".\\test\\1\\herewego.mp4", [])
 
     def test_getFilesToMigrateReturnsAllFilesWhenProvidedPath(self):
         path = ".\\test\\"
         pwd = os.path.abspath(os.path.curdir)
         expectedOutput = [
+            os.path.join(pwd, "test\\1\\season 1\\episodes\\s01e01.mkv"),
             os.path.join(pwd, "test\\1\\herewego.mp4"),
             os.path.join(pwd, "test\\1\\movie.txt"),
-            os.path.join(pwd, "test\\1\\season 1\\episodes\\s01e01.mkv"),
             os.path.join(pwd, "test\\2\\movie.mkv")
         ]
-        self.assertEqual(FlattenUtils.getFilesToMigrate(path, []), expectedOutput)
+        self.assertEqual(FlattenUtils.getFilesToMigrate(path, ['.mp4', '.mkv', '.txt']), expectedOutput)
 
     def test_getFilesToMigrateReturnsOnlyMP4WhenProvidedPathAndMP4Filter(self):
         path = ".\\test\\1\\"
@@ -51,3 +51,13 @@ class TestFlattenUtils(unittest.TestCase):
             os.path.join(pwd, "test\\2\\movie.mkv")
         ]
         self.assertEqual(FlattenUtils.getFilesToMigrate(path, [".mkv"]), expectedOutput)
+        
+    def test_getFoldersGetsAllFolders(self):
+        path = "test\\"
+        pwd = os.path.abspath(os.path.curdir)
+        expectedOutput = [
+            os.path.join(pwd, "test\\1\\season 1\\episodes"),
+            os.path.join(pwd, "test\\1"),
+            os.path.join(pwd, "test\\2"),
+        ]
+        self.assertEqual(FlattenUtils.getFoldersWithVideoFiles(os.path.join(pwd, path), [".mkv", ".mp4"]), expectedOutput)

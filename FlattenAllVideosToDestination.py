@@ -32,6 +32,7 @@ seriesList = [""]
 
 print("started run on " + str(datetime.datetime.now()))
 numberOfVideosMigrated = 0
+folderList = FlattenUtils.getFoldersWithVideoFiles(source, extensions)
 migrationList = FlattenUtils.getFilesToMigrate(source, extensions)
 for fileSource in migrationList:
 	head, tail = ntpath.split(fileSource)
@@ -49,4 +50,8 @@ for fileSource in migrationList:
 
 if (numberOfVideosMigrated > 0):
 	EmailSummary.sendEmailSummary(seriesList, movieList)
+
+for folder in folderList:
+	shutil.rmtree(folder)
+
 print("moved " + str(numberOfVideosMigrated) + " files.")

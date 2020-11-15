@@ -106,3 +106,4 @@ notMigrated.csv
 
 # passwords
 config.py
+.DS_STORE
