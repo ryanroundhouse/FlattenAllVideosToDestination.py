@@ -16,8 +16,13 @@ def getFoldersWithVideoFiles(folder, fileTypes):
     else:
         raise Exception(str(folder) + " doesn't exist or isn't a folder.")
 
+    folderList = sortAscending(folderList)
     logging.info(folderList)
     return folderList
+
+def sortAscending(lst): 
+    lst.sort(key=len, reverse=True)
+    return lst
 
 def getFilesInFolder(folder, fileTypes):
     """ returns a list of full paths to all files of specified filetype in folder. """

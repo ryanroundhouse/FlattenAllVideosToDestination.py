@@ -52,9 +52,6 @@ if (numberOfVideosMigrated > 0):
 	EmailSummary.sendEmailSummary(seriesList, movieList)
 
 for folder in folderList:
-	try:
-		shutil.rmtree(folder)
-	except Exception:
-		pass
+	shutil.rmtree(folder)
 
 print("moved " + str(numberOfVideosMigrated) + " files.")
