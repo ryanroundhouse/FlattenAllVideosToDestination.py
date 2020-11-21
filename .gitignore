@@ -107,3 +107,5 @@ notMigrated.csv
 # passwords
 config.py
 .DS_STORE
+out
+flatten.bat

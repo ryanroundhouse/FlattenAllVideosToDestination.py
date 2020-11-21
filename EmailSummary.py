@@ -5,10 +5,8 @@ from email.mime.text import MIMEText
 
 def sendEmailSummary(smallFiles, bigFiles):
     """ Sends an email summary of all small files and all big files. """
-    if not smallFiles:
-        raise Exception("You must send a list of small files")
-    if not bigFiles:
-        raise Exception("You must send a list of big files")
+    if not smallFiles and not bigFiles:
+        raise Exception("You must send a list of either small files or big files or both")
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = "File sort summary"
